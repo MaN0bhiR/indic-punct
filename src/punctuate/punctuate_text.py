@@ -111,7 +111,20 @@ class Punctuation:
 
         model = nn.DataParallel(model)
         checkpoint = torch.load(self.model_path, map_location=self.device)
-        model.load_state_dict(checkpoint['state_dict'])
+
+        state_dict =checkpoint['state_dict']
+        from collections import OrderedDict
+        new_state_dict = OrderedDict()
+
+        for k, v in state_dict.items():
+            if 'module' not in k:
+                k = 'module.'+k
+            else:
+                k = k.replace('features.module.', 'module.features.')
+            new_state_dict[k]=v
+
+        model.load_state_dict(new_state_dict ,  strict=False)
+        #odel.load_state_dict(checkpoint['state_dict'])
         model = model.module.to(self.device)
 
         model.eval()
