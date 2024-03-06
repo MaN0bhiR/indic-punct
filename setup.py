@@ -17,20 +17,21 @@ setup(
     install_requires=[
         'wget',
         'certifi==2020.12.5',
-        'inflect==5.3.0',
-        'numpy==1.20.2',
-        'pandas==1.2.4',
-        'python-dateutil==2.8.1',
-        'pytz==2021.1',
-        'six==1.15.0',
-        'tqdm==4.60.0',
-        'torch==1.7.1',
-        'scipy==1.5.4',
-        'sentencepiece==0.1.94',
-        'tokenizers==0.9.4',
-        'torchvision==0.8.2',
-        'transformers==4.0.1',
-        'indic-nlp-library==0.81'
+        'inflect',
+        
+        'pandas',
+        'python-dateutil',
+        'pytz',
+        'six',
+        'tqdm',
+        'torch',
+        'scipy',
+        'sentencepiece',
+        'tokenizers',
+        'torchvision==0.16.0',
+        'transformers',
+        'indic-nlp-library==0.81',
+        'numpy'
     ],
     classifiers=[
         # How mature is this project? Common values are
@@ -51,7 +52,7 @@ setup(
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
-        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python ',
     ],
     include_package_data=True,
 )
